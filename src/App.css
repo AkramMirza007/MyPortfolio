@@ -1,0 +1,7 @@
+:root {
+    background-color: rgb(0, 0, 0);
+}
+:root::selection{
+    background-color: black;
+    color: white;
+}
