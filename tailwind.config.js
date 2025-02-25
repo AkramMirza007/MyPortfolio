@@ -11,6 +11,16 @@ export default {
         Ysabeau: ["Ysabeau SC", 'serif']
       },
     },
+    textStroke: {
+      '1': '1px',
+      '2': '2px',
+      '3': '5px',
+    },
+    textStrokeColor: {
+      'black': '#000',
+      'white': '#fff',
+      'red': '#f00',
+    },
     theme: {
       screens: {
         'sm': '640px',
@@ -30,6 +40,31 @@ export default {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-stroke-1': {
+          '-webkit-text-stroke-width': '1px',
+        },
+        '.text-stroke-2': {
+          '-webkit-text-stroke-width': '2px',
+        },
+        '.text-stroke-3': {
+          '-webkit-text-stroke-width': '5px',
+        },
+        '.text-stroke-black': {
+          '-webkit-text-stroke-color': '#000',
+        },
+        '.text-stroke-white': {
+          '-webkit-text-stroke-color': '#fff',
+        },
+        '.text-stroke-red': {
+          '-webkit-text-stroke-color': '#f00',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 }
 

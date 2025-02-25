@@ -5,4 +5,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root::selection{
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 255, 242);
+}
 
+#root {
+    position: relative;
+    background-color: aqua;
+}
+
+ .card{
+     /* transform: rotateX(40deg); */
+     perspective: 800px;
+     } 
+
+
+      
