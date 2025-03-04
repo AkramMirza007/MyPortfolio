@@ -52,10 +52,9 @@ function Intro() {
   useGSAP(() => {
     gsap.from("#box", {
       rotate: 160,
-      scale: 0.5,
+      scale: 0,
       duration: 2,
       delay: 2.4,
-      scale: 0,
       ease: 'elastic.out(1,0.3)'
 
     })
@@ -80,7 +79,7 @@ function Intro() {
 
   return (
     <>
-      <div className={` w-[100%] h-[100vh] font-mono gap-[15vw] relative overflow-hidden box-border bg-[linear-gradient(to_right,transparent_5px,cyan_1px),linear-gradient(to_bottom,white_5px,cyan_1px)] bg-[size:20px_20px]`}>
+      <div className={` w-[100%] h-[100vh] font-mono gap-[15vw] relative overflow-hidden box-border bg-[linear-gradient(to_right,transparent_5px,rgb(43,213,255)_1px),linear-gradient(to_bottom,white_5px,rgb(43,213,255)_1px)] bg-[size:20px_20px]`}>
         {/* <img className=' absolute w-full h-full bg-cover' src="https://images.unsplash.com/photo-1566504182406-416ab1e86d5e?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
 
         {/* <img src="https://i.pinimg.com/736x/07/1d/1f/071d1f41f0ba76e47bc6d0ceb5e730b1.jpg0" alt="" srcset="" className='w-[100%] bg-black h-full object-cover' /> */}
@@ -105,9 +104,9 @@ function Intro() {
       </div>
       <div className='w-full md:h-[30vw] bg-slate-200  flex flex-col md:flex-row items-center justify-evenly   overflow-clip border-t-2 border-black/50'>
         <div className='md:w-1/2 w-full md:h-full h-[20vw]  flex flex-wrap items-center justify-center bg-gradient-to-bl from-[#ff446a] from-50% to-sky-500 to-50% text-white gap-[0.5vw]'>
-          <h2 className='md:text-[5vw] text-[3vh] uppercase'> skills </h2><span className='text-sky-100'> & </span><span className='md:text-[5vw] text-[3vh] uppercase'> tools</span>
+          <h2 className='md:text-[5vw] text-[3vh] uppercase'> skills </h2><span className='text-white'> & </span><span className='md:text-[5vw] text-[3vh] uppercase'> tools</span>
         </div>
-        <div className='md:w-1/2 w-full md:h-full h-[25vh] bg-white overflow-hidden relative'>
+        <div className='md:w-1/2 w-full md:h-full h-[25vh] bg-[#ffffff] overflow-hidden relative'>
           <div className=' absolute w-[10%] h-[100%]  z-10 flex items-center justify-around flex-col md:left-0 right-0 top-0'>
             <button className='md:text-[2.2vw] text-[2.2vh] text-sky-500 ' onClick={nextSlide}><BsArrowUpSquare /></button>
             <button className='md:text-[2.2vw] text-[2.2vh] text-[#ff446a]  ' onClick={prevSlide}><BsArrowDownSquare /></button>
