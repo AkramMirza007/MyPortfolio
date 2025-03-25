@@ -30,7 +30,8 @@ const Contact = () => {
   return (
     <>
       <div className='w-full h-[100vh] relative bg-[linear-gradient(to_right,transparent_5px,rgb(43,213,255)_1px),linear-gradient(to_bottom,white_5px,rgb(43,213,255)_1px)] bg-[size:20px_20px] flex flex-col items-center justify-center'>
-        <h1 className='md:text-[5vw] text-[5vh] text-stroke-2 text-[#ff446a] z-[99] text-shadow font-Ysabeau'>Contact us</h1>
+        <h1 style={{ animation: "flicker 3.8s infinite" }}
+        className='md:text-[5vw] text-[5vh] text-stroke-2 text-[#ff446a] text-shadow-md overflow-visible font-Ysabeau'>Contact us</h1>
         <form action='https://getform.io/f/akkyrzoa' method='post' className=' flex flex-col md:w-[50%] w-[70%]'>
           <input
             type="text"
