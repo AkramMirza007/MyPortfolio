@@ -6,65 +6,27 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         Gowun: ["Gowun Batang", 'serif'],
-        Ysabeau: ["Ysabeau SC", 'serif']
+        Ysabeau: ["Ysabeau SC", 'serif'],
       },
     },
-    textStroke: {
-      '1': '1px',
-      '2': '2px',
-      '3': '5px',
-    },
-    textStrokeColor: {
-      'black': '#000',
-      'white': '#fff',
-      'red': '#f00',
-    },
-    theme: {
-      screens: {
-        'sm': '640px',
-        // => @media (min-width: 640px) { ... }
-  
-        'md': '768px',
-        // => @media (min-width: 768px) { ... }
-  
-        'lg': '1024px',
-        // => @media (min-width: 1024px) { ... }
-  
-        'xl': '1280px',
-        // => @media (min-width: 1280px) { ... }
-  
-        '2xl': '1536px',
-        // => @media (min-width: 1536px) { ... }
-      }
-    }
   },
   plugins: [
-    function ({ addUtilities }) {
+    function({ addUtilities }) {
       const newUtilities = {
-        '.text-stroke-1': {
-          '-webkit-text-stroke-width': '1px',
+        '.text-shadow': {
+          'text-shadow': '2px 2px 4px rgb(255,255,255)' , // Custom shadow
         },
-        '.text-stroke-2': {
-          '-webkit-text-stroke-width': '2px',
+        '.text-shadow-md': {
+          'text-shadow': '4px 4px 6px rgb(255,255,255)', // Medium shadow
         },
-        '.text-stroke-3': {
-          '-webkit-text-stroke-width': '5px',
-        },
-        '.text-stroke-black': {
-          '-webkit-text-stroke-color': '#000',
-        },
-        '.text-stroke-white': {
-          '-webkit-text-stroke-color': '#fff',
-        },
-        '.text-stroke-red': {
-          '-webkit-text-stroke-color': '#f00',
+        '.text-shadow-lg': {
+          'text-shadow': '6px 6px 8px rgb(0, 0, 0, 0.6)', // Large shadow
         },
       };
 
-      addUtilities(newUtilities, ['responsive', 'hover']);
+      addUtilities(newUtilities);
     },
   ],
 }
-

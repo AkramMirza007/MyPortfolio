@@ -4,33 +4,32 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 import throttle from 'lodash/throttle';
-import { easeIn } from 'motion';
 
 
 const projects = [
     {
-        link: '',
+        link: 'https://github.com/AkramMirza007/samsung-recreate',
         src: './src/imgsForWeb/recreation.mp4',
         discription: 'Website which delivers products in an eye-catching way',
         name: 'Recreation',
         bgColor: 'rgba(238,153,255)',
     },
     {
-        link: '',
+        link: 'https://github.com/AkramMirza007/passOp',
         src: './src/imgsForWeb/passOp.mp4',
         discription: 'Want to save all links and passwords? passOp is here for You',
         name: 'passOp',
         bgColor: 'green',
     },
     {
-        link: '',
+        link: 'https://github.com/AkramMirza007/cynthia-Ogwu',
         src: './src/imgsForWeb/Cynthia ugwu.mp4',
         discription: 'The website where you can see products the way delicate they are...',
         name: 'cynthia ugwu',
         bgColor: '',
     },
     {
-        link: '',
+        link: 'https://github.com/AkramMirza007/guess-game',
         src: './src/imgsForWeb/guess.mp4',
         discription: 'Want to try your luck? Play this game...',
         name: 'The Guess Game',
@@ -52,7 +51,6 @@ const Projects = () => {
                 scrub: 4,
                 pin: true,
                 invalidateOnRefresh: true,
-                snap: "25%",
             },
         });
 
@@ -87,14 +85,15 @@ const Projects = () => {
         }
 
     }, [isMobile]);
-    useEffect(() => {
-        const handleResize = () => {
-            const isMobileScreen = window.innerWidth <= 768;
-            if (isMobile !== isMobileScreen) {
-                setIsMobile(isMobileScreen);
-            }
+    const handleResize = () => {
+        const isMobileScreen = window.innerWidth <= 768;
+        if (isMobile !== isMobileScreen) {
+            setIsMobile(isMobileScreen);
+        }
 
-        };
+    };
+    useEffect(() => {
+        
 
         window.addEventListener('resize', handleResize);
 
@@ -128,7 +127,6 @@ const Projects = () => {
                         ease: 'elastic.out(1, 0.2)',
                         rotationX: yVal,
                         rotationY: xVal,
-                        invalidateOnRefresh: true,
                     });
                 }
             });
@@ -141,17 +139,13 @@ const Projects = () => {
                         ease: "easeIn",
                         rotationX: yVal,
                         rotationY: xVal,
-                        invalidateOnRefresh: true,
                     });
                 }
             });
         }
-    }, [rect, xVal, yVal , isMobile]);
+    }, [rect, xVal, yVal, isMobile]);
 
-    // Refresh ScrollTrigger
-    useEffect(() => {
-        ScrollTrigger.refresh();
-    }, []);
+  
 
     return (
         <div className="w-full h-screen relative ">
@@ -164,7 +158,6 @@ const Projects = () => {
                         <div
                             key={index}
                             onMouseMove={(e) => throttledMouseMoving(e, index)}
-                            onMouseLeave={() => resetTilt(index)}
                             className="card w-[100vw] h-full flex items-center justify-center"
                         >
                             <div
@@ -179,12 +172,22 @@ const Projects = () => {
                                     className="w-[500%] h-auto"
                                     src={`${item.src}`}
                                 ></video>
-                                <h2 className="absolute border-[rgb(255,255,255)] top-[-20%] md:top-0 left-[50%] -translate-x-[50%] -translate-y-[0%] bg-[#ff446a] text-white px-[1vw] border-b-4 border-r-2 text-[2vw] font-Ysabeau">
+                                <h2 className="absolute border-[rgb(255,255,255)] top-[-20%] md:top-0 left-[50%] -translate-x-[50%] -translate-y-[0%] bg-[#ff446a] text-white px-[1vw] border-b-4 border-r-2 md:text-[2vw] text-[2vh] font-Ysabeau">
                                     {item.name}
                                 </h2>
-                                <h3 className="md:text-nowrap bg-[#ff446a] text-white font-Ysabeau px-[1vw] text-center text-wrap md:text-[1.5vw] text-[1.7vh] border-b-4 border-r-2">
-                                    {item.discription}
-                                </h3>
+                                <div className="md:text-nowrap bg-[#ff446a] text-white font-Ysabeau md:px-[1vw] px-[2vh] py-2 text-center text-wrap md:text-[1.5vw] text-[1.7vh] border-b-4 border-r-2 flex justify-center items-center md:flex-row flex-col rounded-lg">
+                                    <h3>
+                                        {item.discription}
+                                    </h3>
+                                    <a href={item.link}
+                                        target="_blank"
+                                        title={`View the source code for ${item.name}`}
+                                        rel="noopener noreferrer"
+                                        className="bg-white border-2 rounded-2xl py-0 px-2 h-[80%] mouse-opacity text-[#ff446a] ml-3 text-sm md:text-lg flex justify-center items-center text-nowrap md:my-0 my-[3vw]"
+                                    >
+                                        <span>source code</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}

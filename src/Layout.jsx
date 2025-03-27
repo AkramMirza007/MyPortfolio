@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import Mouse from './mouse/Mouse'
 import './index.css'
 
+
 const Layout = () => {
   return (
     <>

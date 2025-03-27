@@ -3,6 +3,7 @@ import gsap from 'gsap';
 
 const Mouse = () => {
   const follower = useRef(null);
+  const prevMouseX = useRef(0);
   const rotateRef = useRef(0); // Ref for rotation value
 
   useEffect(() => {
@@ -14,9 +15,17 @@ const Mouse = () => {
       const diffe = dets.clientX - elem.getBoundingClientRect().left;
       diffrot = dets.clientX - rotateRef.current;
       rotateRef.current = dets.clientX;
+      const currentMouseX = dets.clientX;
+      const direction = currentMouseX > prevMouseX.current ? "right" : "left";
+      prevMouseX.current = currentMouseX; // Update the previous X position
+      const scaleXValue = direction === "right" ? 1 : -1; // Flip the image horizontally
+      gsap.to(elem.querySelector(".img-mouse"), {
+        scaleX: scaleXValue,
+        duration: 1,
+        ease: 'power3.out',
+      });
 
       gsap.to(elem.querySelector(".img-mouse"), {
-        opacity: 1,
         top: diff,
         left: diffe,
         rotate: gsap.utils.clamp(-20, 20, diffrot) + "deg", // Use degrees for rotation
@@ -26,38 +35,40 @@ const Mouse = () => {
 
     const handleMouseOver = () => {
       gsap.to(elem.querySelector(".img-mouse"), {
-        scale: 0,
         duration: 0.5,
+        opacity:0,
       });
     };
 
     const handleMouseOut = () => {
       gsap.to(elem.querySelector(".img-mouse"), {
-        scale: 1,
         duration: 0.5,
+        opacity:1
       });
-    };
-
-    const attachInputListeners = () => {
-      const inputElements = document.querySelectorAll(".white-placeholder");
+    }; 
+    
+    const attachMouseListner = () => {
+      const inputElements = document.querySelectorAll(".mouse-opacity");
       inputElements.forEach(input => {
         input.addEventListener("mouseover", handleMouseOver);
         input.addEventListener("mouseout", handleMouseOut);
       });
-    };
+    
 
-    const detachInputListeners = () => {
-      const inputElements = document.querySelectorAll("input");
+    };
+    
+    const detachMouseListner = () => {
+      const inputElements = document.querySelectorAll(".mouse-opacity");
       inputElements.forEach(input => {
         input.removeEventListener("mouseover", handleMouseOver);
         input.removeEventListener("mouseout", handleMouseOut);
       });
+  
     };
-
-    // Use MutationObserver to watch for changes in the DOM and reattach listeners
+    
     const observer = new MutationObserver(() => {
-      detachInputListeners();
-      attachInputListeners();
+      detachMouseListner();
+      attachMouseListner();
     });
 
     observer.observe(document.body, {
@@ -66,11 +77,11 @@ const Mouse = () => {
     });
 
     window.addEventListener("mousemove", handleMouseMove); // Add event listener to window
-    attachInputListeners(); // Attach input listeners initially
+    attachMouseListner(); // Attach input listeners initially
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove); // Remove event listener from window
-      detachInputListeners(); // Detach input listeners
+      detachMouseListner(); // Detach input listeners
       observer.disconnect(); // Disconnect observer
     };
   }, []);
@@ -111,8 +122,8 @@ const Mouse = () => {
 
   return (
     <>
-      <div ref={follower} id='custom-cursor' className='fixed hidden h-[7vw] w-[7vw] top-[-3.5vw] left-[-3.5vw] transition ease-linear rounded-[100%] bg-gradient-to-tr pointer-events-none md:flex items-center justify-center z-50'>
-        <img className='img-mouse' src="https://static.vecteezy.com/system/resources/previews/037/295/125/original/ai-generated-astronaut-in-cartoon-style-on-transparent-background-free-png.png" alt="" />
+      <div ref={follower} id='custom-cursor' className='fixed hidden h-[5vw] w-[5vw] top-[-2.5vw] left-[-2.5vw] transition ease-linear rounded-[100%] bg-gradient-to-tr pointer-events-none md:flex items-center justify-center z-50'>
+        <img className='img-mouse' src="./src/imgsForWeb/amongUs.png" alt="" />
       </div>
     </>
   );

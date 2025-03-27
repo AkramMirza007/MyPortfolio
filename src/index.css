@@ -40,17 +40,19 @@ html {
     box-sizing: border-box;
   }
   
+  .text-stroke {
+    text-shadow: #43f2ff 2px 2px 0px;
+  }
 
   ::-webkit-scrollbar {
     width: 8px;
     background: rgba(0, 0, 0, 0); /* Set to fully transparent */
-    /* display: none; */
     opacity: .5;
     
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0); /* Set to fully transparent */
+    background: rgba(0, 0, 0, 0);
     
 }
 

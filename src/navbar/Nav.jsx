@@ -1,7 +1,8 @@
 import React from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { NavLink } from 'react-router-dom';
+import { NavLink  } from 'react-router-dom';
+
 
 
 
@@ -9,26 +10,30 @@ function Nav() {
 
   useGSAP(() => {
     gsap.from(".navA", {
-      y: "-100%",
+      y: "-50%",
       opacity: 0,
-      delay: 0.5,
-      duration: 0.8,
-      stagger : -1,
+      delay: 0.2,
+      duration: 1,
       ease: 'elastic.out(1, 0.1)'
     });
-    
-    
+
+
   })
 
   return (
     <>
-      <nav className='bg-gradient-to-r m-0 from-[#ffb5c4] to-[#00eeff] p-[1.5vw] fixed top-[1.5vw] left-1/2 transform -translate-x-1/2 w-fit h-[3vh] md:h-[3vw]  shadow-md z-40 border-b-4 border-white border-r-2'>
+      <nav className=' bg-gradient-to-r m-0 from-[#ffc1cd] to-[#00eeff]  py-[4vw] md:py-[1vw] px-2 fixed md:top-[1.5vw] top-[3vh] left-1/2 transform -translate-x-1/2 w-fit h-[3vh] md:h-[3vw]  shadow-md z-40 border-b-4 border-white border-r-2'>
 
-        <div className="rNav w-fit h-full flex items-center p-0 m-0 justify-between ">
-          <NavLink to='/' className='navA py-[0.3rem] px-[1rem] bg-transparent md:h-[2vw] h-[3vh] font-light outline-none text-white rounded-[1vh]  ' href=""> <img className=' w-full h-full' src="https://www.pinclipart.com/picdir/big/563-5631016_house-icon-house-emoji-png-clipart.png" alt="" /></NavLink>
-          <NavLink to='webprojects' className='navA py-[0.3rem] px-[1rem] bg-transparent md:h-[2vw] h-[3vh] font-light outline-none text-white rounded-[1vh] ' href=""> <img className=' w-full h-full' src="https://i.pinimg.com/originals/6c/53/1e/6c531ec6f45c879fe569204b66cd182e.png" alt="" /></NavLink>
-          <NavLink to='contactUs' className='navA py-[0.3rem] px-[1rem] bg-transparent md:h-[2vw] h-[3vh] font-light outline-none text-white rounded-[1vh]   ' href=""> <img className=' w-full h-full' src="https://whatemoji.org/wp-content/uploads/2020/07/Telephone-Receiver-Emoji.png" alt="" /></NavLink>
-
+        <div className="rNav mouse-opacity w-fit h-full flex items-center p-0  m-0 justify-between">
+          <NavLink to='/' href='' className={({ isActive }) => ` ${isActive ? " bg-white/15 shadow-md rounded-lg" : "bg-transparent"}  navA mouse-opacity py-[0.2rem] px-[1rem]  md:h-[2.5vw] h-[3.5vh] font-light outline-none `} >
+            <img className=' w-full  h-full ' src="./src/imgsForweb/home.png" alt="" />
+          </NavLink>
+          <NavLink to='webprojects' href="" className={({ isActive }) => ` ${isActive ? " bg-white/15 shadow-md rounded-lg" : "bg-transparent"}  navA mouse-opacity py-[0.2rem] px-[1rem]  md:h-[2.5vw] h-[3.5vh] font-light outline-none `} >
+            <img className=' w-full  h-full' src="./src/imgsForweb/art.png" alt="" />
+          </NavLink>
+          <NavLink to='contactUs' href="" className={({ isActive }) => ` ${isActive ? " bg-white/15 shadow-md rounded-lg" : "bg-transparent"}  navA mouse-opacity py-[0.2rem] px-[1rem]  md:h-[2.5vw] h-[3.5vh] font-light outline-none `} >
+            <img className=' w-full  h-full' src="./src/imgsForweb/call.png" alt="" />
+          </NavLink>
         </div>
       </nav>
 
