@@ -9,28 +9,28 @@ import throttle from 'lodash/throttle';
 const projects = [
     {
         link: 'https://github.com/AkramMirza007/samsung-recreate',
-        src: './src/imgsForWeb/recreation.mp4',
+        src: './videos/recreation.mp4',
         discription: 'Website which delivers products in an eye-catching way',
         name: 'Recreation',
         bgColor: 'rgba(238,153,255)',
     },
     {
         link: 'https://github.com/AkramMirza007/passOp',
-        src: './src/imgsForWeb/passOp.mp4',
+        src: './videos/passOp.mp4',
         discription: 'Want to save all links and passwords? passOp is here for You',
         name: 'passOp',
         bgColor: 'green',
     },
     {
         link: 'https://github.com/AkramMirza007/cynthia-Ogwu',
-        src: './src/imgsForWeb/Cynthia ugwu.mp4',
+        src: './videos/Cynthia ugwu.mp4',
         discription: 'The website where you can see products the way delicate they are...',
         name: 'cynthia ugwu',
         bgColor: '',
     },
     {
         link: 'https://github.com/AkramMirza007/guess-game',
-        src: './src/imgsForWeb/guess.mp4',
+        src: './videos/guess.mp4',
         discription: 'Want to try your luck? Play this game...',
         name: 'The Guess Game',
         bgColor: 'red',

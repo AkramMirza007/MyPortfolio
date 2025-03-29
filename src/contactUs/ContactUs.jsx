@@ -16,8 +16,9 @@ const socialMediaLinks = [
   },
   {
     icon: <ImProfile className="text-red-500 md:text-[2vw] bg-white rounded text-[3vh]" />,
-    link: "./src/imgsForWeb/resume.pdf",
-    download: true
+    link: "/images/resume.pdf",
+    download: true, 
+    type: "application/pdf"
   },
   {
     icon: <FaSquareWhatsapp className="text-[#1BD45D] md:text-[2vw] bg-white rounded text-[3vh]" />,
@@ -69,6 +70,7 @@ const Contact = () => {
               target={item.download ? "_self" : "_blank"} // Open in the same tab if it's a download
               rel={!item.download ? "noopener noreferrer" : undefined}
               download={item.download ? true : undefined} // Dynamically add the download attribute
+              type={item.type}
             >
               {item.icon}
             </a>

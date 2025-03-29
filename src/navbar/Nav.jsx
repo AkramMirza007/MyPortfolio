@@ -26,13 +26,13 @@ function Nav() {
 
         <div className="rNav mouse-opacity w-fit h-full flex items-center p-0  m-0 justify-between">
           <NavLink to='/' href='' className={({ isActive }) => ` ${isActive ? " bg-white/15 shadow-md rounded-lg" : "bg-transparent"}  navA mouse-opacity py-[0.2rem] px-[1rem]  md:h-[2.5vw] h-[3.5vh] font-light outline-none `} >
-            <img className=' w-full  h-full ' src="./src/imgsForweb/home.png" alt="" />
+            <img className=' w-full  h-full ' type="image/png" src="./images/home.png" alt="" />
           </NavLink>
           <NavLink to='webprojects' href="" className={({ isActive }) => ` ${isActive ? " bg-white/15 shadow-md rounded-lg" : "bg-transparent"}  navA mouse-opacity py-[0.2rem] px-[1rem]  md:h-[2.5vw] h-[3.5vh] font-light outline-none `} >
-            <img className=' w-full  h-full' src="./src/imgsForweb/art.png" alt="" />
+            <img className=' w-full  h-full' type="image/png" src="./images/art.png" alt="" />
           </NavLink>
           <NavLink to='contactUs' href="" className={({ isActive }) => ` ${isActive ? " bg-white/15 shadow-md rounded-lg" : "bg-transparent"}  navA mouse-opacity py-[0.2rem] px-[1rem]  md:h-[2.5vw] h-[3.5vh] font-light outline-none `} >
-            <img className=' w-full  h-full' src="./src/imgsForweb/call.png" alt="" />
+            <img className=' w-full  h-full' type="image/png" src="./images/call.png" alt="" />
           </NavLink>
         </div>
       </nav>

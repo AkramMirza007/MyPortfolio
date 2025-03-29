@@ -123,7 +123,7 @@ const Mouse = () => {
   return (
     <>
       <div ref={follower} id='custom-cursor' className='fixed hidden h-[5vw] w-[5vw] top-[-2.5vw] left-[-2.5vw] transition ease-linear rounded-[100%] bg-gradient-to-tr pointer-events-none md:flex items-center justify-center z-50'>
-        <img className='img-mouse' src="./src/imgsForWeb/amongUs.png" alt="" />
+        <img type="image/png" className='img-mouse' src="./images/amongUs.png" alt="" />
       </div>
     </>
   );

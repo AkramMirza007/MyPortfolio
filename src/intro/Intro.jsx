@@ -95,14 +95,14 @@ function Intro() {
       <div className={` w-[100%] h-[100vh] font-mono gap-[15vw] relative overflow-hidden box-border bg-[linear-gradient(to_right,transparent_5px,rgb(43,213,255)_1px),linear-gradient(to_bottom,white_5px,rgb(43,213,255)_1px)] bg-[size:20px_20px]`}>
         <div className='w-full md:h-fit h-[80%] box-border absolute gap-[2vw] top-[50%] md:top-[50%]  -translate-y-1/2    left-0 flex flex-col md:flex-row py-[5vw] items-center justify-evenly'>
           <div className="intro-text via-blue-300 text5-[rgb(255,255,55)] font-Ysabeau overflow-hidden relative  bg-gradient-to-r m-0 from-[#ffc1cd] to-[#00eeff] backdrop-brightness-100 W-1/2 h-[50%] md:h-full  shadow-xl py-[1vw] px-[2vw] flex flex-col justify-center md:items-start items-center  border-b-4 border-white border-r-2 ">
-            <video muted loop autoPlay className=' w-[200%] h-full object-cover left-0 z-10 absolute  ' src="./src/imgsForWeb/pinkBackGround.mp4"></video>
+            <video muted loop autoPlay  className=' w-[200%] h-full object-cover left-0 z-10 absolute  ' type="video/mp4" src="./videos/pinkBackGround.mp4"></video>
             <h1 className='md:text-[3vw] text-[5vw] z-20 leading-tight tracking-tight text-stroke '>HELLO,</h1>
             <h1 className='md:text-[3vw] text-[5vw] z-20 leading-tight tracking-tight  font-semibold text-stroke '>I AM AKRAM</h1>
             <h1 className='md:text-[3vw] text-[5vw] z-20 leading-tight tracking-tight text-sky-00 text-stroke'>A FRONT END DEVOLOPER</h1>
             <p className='mt-[1vw] md:text-[2vw] z-20 text-[2vw] text-right  py-[0.5vw]   font-semibold tracking-wide uppercase text-stroke'> Design is innovative and story telling </p>
           </div>
           <div id='box' className="intro-img box md:h-[25vw] md:w-[25vw] w-[25vh] md:mt-0 mt-[5vw]  h-[25vh] overflow-hidden ">
-            <img className='w-full h-full bg-contain brightness-200 drop-shadow-lg ' src='./src/imgsForWeb/file.png' srcSet="" alt="Example" />
+            <img className='w-full h-full bg-contain brightness-200 drop-shadow-lg ' type="image/png" src='./images/file.png' srcSet="" alt="Example" />
           </div>
         </div>
         <div className={`w-full h-[10vh] bg-gradient-to-bl from-fuchsia-400 via-sky-500 to-fuchsia-500 flex items-center justify-center absolute bottom-0 md:text-[2vw] text-[4vw] font-Ysabeau text-shadow-md text-[#ff446a]`}>
